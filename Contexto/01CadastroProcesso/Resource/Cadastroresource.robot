@@ -2,29 +2,38 @@
 Library  Process
 Library  AutoItLibrary
 Library  SikuliLibrary
-#Library  DatabaseLibrary
+Library  DatabaseLibrary
+
 
 
 *** Variables ***
 ${prcTestador}              F:\\SAJ\\Topo\\prcTestador.exe
 ${spjCliente}               F:\\SAJ\\Topo\\spjClienteApp.exe
 ${pathTestador}             F:\\SAJ\\Topo\\
-${cdprocessoWS}             DW0010K180000
-${nuprocessoWS}             2019.01.003321
-${cdprocessoP}              '0100076ON0001'
-${nuprocessoP}              2019.01.056253
-#${CONEXAO_BANCO}            'saj/agesune1@PRJMSP'
+${cdprocessoWS}             DW0013X040000
+${nuprocessoWS}             2019.01.056558
+${telaConfirmacao}          OK
+${CONEXAO_BANCO}            'saj/agesune1@PRJXSP'
 ${IMAGE_DIR}                ${CURDIR}\\images
 
 *** Keywords ***
+
+Conectar no banco
+  Connect To Database Using Custom Params    cx_Oracle   ${CONEXAO_BANCO}
+
 Carrega diretório de imagens
     Add Image Path          ${IMAGE_DIR}
 
 Fechar testador
   Sleep    3
-#  Terminate Process  ${Process testador}  kill=True
+  Terminate Process         ${Process testador}  kill=True
   Terminate Process         ${Process cliente}  kill=True
   Stop Remote Server
+
+# Verificar se ja esta cadastrado na base
+# #sansTran=False Exists In Database
+#   Check If Exists In Database    select cdprocesso from eprcWsreq where cdprocessoreqtj = 'DW0013X040000'    True
+# # #
 
 Executar testador
   ${Process testador}       Start Process  ${prcTestador}  cwd=${pathTestador}
@@ -44,7 +53,7 @@ Informar cdProcessoreqtj
   Press Special Key         ENTER
 
 Aguardar confirmacao de processamento
-  Win Wait Active           ${telaConfirmacao}  ${EMPTY}  10
+  Win Wait Active           ${EMPTY}  ${telaConfirmacao}  60
 
 Verificar requisitorio no Cadastro de Processos
 ### INICIA PRJ
