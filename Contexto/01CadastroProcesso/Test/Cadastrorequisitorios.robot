@@ -1,7 +1,10 @@
 *** Settings ***
 Documentation     Teste Precatorio
 Library           Process
+Library           DatabaseLibrary
 Resource          ../Resource/Cadastroresource.robot
+Resource          ../../Resource/ResourceGeral.robot
+Resource          ../../Resource/ResourceBD.robot
 Test Setup        Carrega diretório de imagens
 Test Teardown     Fechar testador
 

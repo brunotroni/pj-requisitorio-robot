@@ -4,6 +4,9 @@ Library  AutoItLibrary
 Library  SikuliLibrary
 
 *** Variables ***
+${prcTestador}              F:\\SAJ\\Topo\\prcTestador.exe
+${spjCliente}               F:\\SAJ\\Topo\\spjClienteApp.exe
+${pathTestador}             F:\\SAJ\\Topo\\
 
 *** Keywords ***
 
@@ -12,12 +15,11 @@ Library  SikuliLibrary
 ##### IMPORTANTE CONFIGURAR PARA APONTAR NA BASE PRJTESTESP
 #
 
-arrega diretório de imagens
-    Add Image Path          ${IMAGE_DIR}
+
 
 Fechar testador
       Sleep    3
-    #  Terminate Process  ${Process testador}  kill=True
+      Terminate Process  ${Process testador}  kill=True
       Terminate Process         ${Process cliente}  kill=True
       Stop Remote Server
 
@@ -34,6 +36,3 @@ INICIA PRJ
         ### FAZ LOGIN AUTOMATICO
           Press Special Key         ENTER
           Wait For Active Window      SAJ/PJ - Procuradoria Jurídica  ${EMPTY}
-
-Conectar no banco
-            Connect To Database Using Custom Params    cx_Oracle   ${CONEXAO_BANCO}
