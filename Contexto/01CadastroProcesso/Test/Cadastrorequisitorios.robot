@@ -1,12 +1,10 @@
 *** Settings ***
 Documentation     Teste Precatorio
 Library           Process
-Library           DatabaseLibrary
+Library           AutoItLibrary
 Resource          ../Resource/Cadastroresource.robot
-Resource          ../../Resource/ResourceGeral.robot
-Resource          ../../Resource/ResourceBD.robot
 Test Setup        Carrega diretório de imagens
-Test Teardown     Fechar testador
+Test Teardown     Fecha testador
 
 
 *** Test Cases ***
@@ -28,7 +26,7 @@ Dado que exista requisitórios disponíveis
 
 Quando usuario cadastrar o requisitórios
   Executar testador
-  Abrir tela cadastrar requisitorio digital
+  Abrir menu cadastrar requisitorio digital
   Informar cdProcessoreqtj
   Aguardar confirmacao de processamento
 

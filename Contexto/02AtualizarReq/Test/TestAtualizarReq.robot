@@ -3,7 +3,7 @@ Documentation     Teste Precatorio
 Library           Process
 Resource          ../Resource/Atualizaresource.robot
 #Test Setup        Carrega diretório de imagens
-Test Teardown     Fechar testador
+Test Teardown     Fecha testador
 Suite Setup       Conectar no banco
 
 *** Test Cases ***

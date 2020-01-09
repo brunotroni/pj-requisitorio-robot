@@ -17,13 +17,13 @@ ${pathTestador}             F:\\SAJ\\Topo\\
 
 
 
-Fechar testador
+Fecha testador
       Sleep    3
-      Terminate Process  ${Process testador}  kill=True
+      Terminate Process         ${Process testador}  kill=True
       Terminate Process         ${Process cliente}  kill=True
       Stop Remote Server
 
-Executar testador
+Abrir Testador
         ${Process testador}       Start Process  ${prcTestador}  cwd=${pathTestador}
         Set Suite Variable        ${Process testador}
         Wait For Active Window    Testador/ Simulador - PRJ  ${EMPTY}  10
@@ -36,3 +36,9 @@ INICIA PRJ
         ### FAZ LOGIN AUTOMATICO
           Press Special Key         ENTER
           Wait For Active Window      SAJ/PJ - Procuradoria Jurídica  ${EMPTY}
+Abre janela Cadastro de PROCESSO
+          Send                      {ALT}
+          Send                      p
+          Send                      p
+          Wait For Active Window    ${EMPTY}    Cadastro de Processos Judiciais
+          Sleep                     1
