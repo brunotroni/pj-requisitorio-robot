@@ -1,0 +1,2877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.3 on win32)" generated="20200113 14:04:14.699" rpa="false">
+<suite id="s1" name="Cadastrorequisitorios" source="F:\pj-requisitorio-robot\Contexto\01CadastroProcesso\Test\Cadastrorequisitorios.robot">
+<test id="s1-t1" name="Cenario 02:Cadastrar acao ordinaria">
+<kw name="Carrega diretório de imagens" library="Cadastroresource" type="setup">
+<kw name="Add Image Path" library="SikuliLibrary">
+<doc>Add image path</doc>
+<arguments>
+<arg>${IMAGE_DIR}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:22.259" level="INFO">Params: [F:\pj-requisitorio-robot\Contexto\01CadastroProcesso\Resource\images]</msg>
+<status status="PASS" starttime="20200113 14:04:22.244" endtime="20200113 14:04:22.259"></status>
+</kw>
+<kw name="Conectar no banco" library="ResourceBD">
+<kw name="Connect To Database Using Custom Params" library="DatabaseLibrary">
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using the map string `db_custom_param_string`.</doc>
+<arguments>
+<arg>cx_Oracle</arg>
+<arg>${CONEXAO_BANCO}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:22.267" level="INFO">Executing : Connect To Database Using Custom Params : cx_Oracle.connect(db_api_2.connect('saj/agesune1@PRJXSP')) </msg>
+<status status="PASS" starttime="20200113 14:04:22.260" endtime="20200113 14:04:22.593"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:22.260" endtime="20200113 14:04:22.593"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:22.243" endtime="20200113 14:04:22.594"></status>
+</kw>
+<kw name="Dado a tela de cadastro de processos judiciais">
+<kw name="Abrir janela de cadastro de processos judiciais" library="Cadastroresource">
+<kw name="Abre janela Cadastro de PROCESSO" library="ResourceGeral">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Passei</arg>
+</arguments>
+<msg timestamp="20200113 14:04:22.595" level="INFO">Passei</msg>
+<status status="PASS" starttime="20200113 14:04:22.595" endtime="20200113 14:04:22.595"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{ALT}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:22.595" endtime="20200113 14:04:22.606"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>p</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:22.606" endtime="20200113 14:04:22.617"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>p</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:22.617" endtime="20200113 14:04:22.628"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>Cadastro de Processos Judiciais</arg>
+</arguments>
+<msg timestamp="20200113 14:04:24.602" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=-1)</msg>
+<msg timestamp="20200113 14:04:24.602" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=60)</msg>
+<msg timestamp="20200113 14:04:24.602" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=60)</msg>
+<status status="PASS" starttime="20200113 14:04:22.628" endtime="20200113 14:04:24.602"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20200113 14:04:25.602" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200113 14:04:24.602" endtime="20200113 14:04:25.602"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:22.594" endtime="20200113 14:04:25.602"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!n</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:25.602" endtime="20200113 14:04:25.624"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:22.594" endtime="20200113 14:04:25.625"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:22.594" endtime="20200113 14:04:25.625"></status>
+</kw>
+<kw name="Quando cadastro o processo de acao ordinaria">
+<kw name="Gerar número randômico de processos" library="ResourceGeral">
+<kw name="Random Int" library="FakerLibrary">
+<doc>Returns a random integer between two values.</doc>
+<arguments>
+<arg>min=1000000</arg>
+<arg>max=9999999</arg>
+</arguments>
+<assign>
+<var>${Numero aleatorio}</var>
+</assign>
+<msg timestamp="20200113 14:04:25.626" level="INFO">${Numero aleatorio} = 8773019</msg>
+<status status="PASS" starttime="20200113 14:04:25.626" endtime="20200113 14:04:25.626"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${Numero aleatorio}</arg>
+<arg>-92.2019.4.11.8916</arg>
+</arguments>
+<assign>
+<var>${Numero judicial do processo}</var>
+</assign>
+<msg timestamp="20200113 14:04:25.627" level="INFO">${Numero judicial do processo} = 8773019-92.2019.4.11.8916</msg>
+<status status="PASS" starttime="20200113 14:04:25.626" endtime="20200113 14:04:25.627"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Numero judicial do processo}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:25.627" level="INFO">${Numero judicial do processo} = 8773019-92.2019.4.11.8916</msg>
+<status status="PASS" starttime="20200113 14:04:25.627" endtime="20200113 14:04:25.627"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:25.625" endtime="20200113 14:04:25.627"></status>
+</kw>
+<kw name="Cadastrar Processo ordinario" library="Cadastroresource">
+<arguments>
+<arg>${Codigo Tribunal}</arg>
+<arg>${Codigo Orgao Judicial}</arg>
+<arg>${Num Juizo}</arg>
+<arg>${Numero judicial do processo}</arg>
+<arg>${Codigo Area}</arg>
+<arg>${Codigo Assunto}</arg>
+<arg>${Tipo Acao Ordinaria}</arg>
+<arg>${Entidade}</arg>
+<arg>${Cod parte ativa}</arg>
+<arg>${Cod parte passiva}</arg>
+<arg>${cod representante}</arg>
+</arguments>
+<kw name="Preencher dados novo processo" library="Cadastroresource">
+<arguments>
+<arg>${Codigo Tribunal}</arg>
+<arg>${Codigo Orgao Judicial}</arg>
+<arg>${Num Juizo}</arg>
+</arguments>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Codigo Tribunal}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:25.629" endtime="20200113 14:04:25.640"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:25.895" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:25.641" endtime="20200113 14:04:25.895"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:25.641" endtime="20200113 14:04:25.895"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:25.641" endtime="20200113 14:04:25.895"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:25.640" endtime="20200113 14:04:25.896"></status>
+</kw>
+<kw name="Control Focus" library="AutoItLibrary">
+<doc>method ControlFocus</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>TspCampoMascara7</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:25.896" endtime="20200113 14:04:25.897"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Codigo Orgao Judicial}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:25.898" endtime="20200113 14:04:25.908"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:25.961" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:25.909" endtime="20200113 14:04:25.961"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:25.909" endtime="20200113 14:04:25.961"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:25.909" endtime="20200113 14:04:25.961"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:25.909" endtime="20200113 14:04:25.961"></status>
+</kw>
+<kw name="Control Focus" library="AutoItLibrary">
+<doc>method ControlFocus</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>TspDBLookupComboBox1</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:25.961" endtime="20200113 14:04:25.962"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20200113 14:04:26.963" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200113 14:04:25.962" endtime="20200113 14:04:26.963"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Num Juizo}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:26.963" endtime="20200113 14:04:26.974"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:27.027" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:26.975" endtime="20200113 14:04:27.027"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:26.975" endtime="20200113 14:04:27.027"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:26.974" endtime="20200113 14:04:27.027"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:26.974" endtime="20200113 14:04:27.028"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Consulta de Juizos}</arg>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20200113 14:04:27.632" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Consulta de Juizos', TimeOut=5)</msg>
+<msg timestamp="20200113 14:04:27.632" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Consulta de Juizos', TimeOut=5)</msg>
+<msg timestamp="20200113 14:04:27.632" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Consulta de Juizos', TimeOut=5)</msg>
+<status status="PASS" starttime="20200113 14:04:27.028" endtime="20200113 14:04:27.632"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20200113 14:04:27.682" level="INFO">Params: [ENTER]
+[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20200113 14:04:27.632" endtime="20200113 14:04:27.683"></status>
+</kw>
+<kw name="Control Focus" library="AutoItLibrary">
+<doc>method ControlFocus</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>TspCampoMascara1</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:27.683" endtime="20200113 14:04:27.688"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Numero judicial do processo}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:27.688" endtime="20200113 14:04:27.947"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:27.997" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:27.948" endtime="20200113 14:04:27.997"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:27.948" endtime="20200113 14:04:27.997"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:27.948" endtime="20200113 14:04:27.997"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:27.947" endtime="20200113 14:04:27.997"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>Confirmação</arg>
+<arg>${EMPTY}</arg>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20200113 14:04:28.522" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='Confirmação', WindowText='', TimeOut=5)</msg>
+<msg timestamp="20200113 14:04:28.522" level="INFO">AutoItLibrary.WinWait(WindowTitle='Confirmação', WindowText='', TimeOut=5)</msg>
+<msg timestamp="20200113 14:04:28.522" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='Confirmação', WindowText='', TimeOut=5)</msg>
+<status status="PASS" starttime="20200113 14:04:27.997" endtime="20200113 14:04:28.522"></status>
+</kw>
+<kw name="Screen Should Contain" library="SikuliLibrary">
+<doc>Screen should contain</doc>
+<arguments>
+<arg>ConfirmaCNJ.png</arg>
+</arguments>
+<msg timestamp="20200113 14:04:29.051" level="INFO">Params: [ConfirmaCNJ.png]</msg>
+<msg timestamp="20200113 14:04:29.051" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1578935069028.png'/&gt;</msg>
+<status status="PASS" starttime="20200113 14:04:28.522" endtime="20200113 14:04:29.051"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20200113 14:04:29.107" level="INFO">Params: [ENTER]
+[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20200113 14:04:29.052" endtime="20200113 14:04:29.107"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!c</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:29.107" endtime="20200113 14:04:29.133"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200113 14:04:31.134" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200113 14:04:29.133" endtime="20200113 14:04:31.134"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:25.628" endtime="20200113 14:04:31.134"></status>
+</kw>
+<kw name="Preencher aba dados principais" library="Cadastroresource">
+<arguments>
+<arg>${Codigo Area}</arg>
+<arg>${Codigo Assunto}</arg>
+<arg>${Tipo Acao ordinaria}</arg>
+<arg>${Entidade}</arg>
+</arguments>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:31.689" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:31.689" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:31.689" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:31.135" endtime="20200113 14:04:31.689"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Codigo Area}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:31.689" endtime="20200113 14:04:31.700"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:31.752" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:31.701" endtime="20200113 14:04:31.752"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:31.701" endtime="20200113 14:04:31.752"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:31.700" endtime="20200113 14:04:31.752"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:31.700" endtime="20200113 14:04:31.752"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:32.304" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:32.304" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:32.304" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:31.752" endtime="20200113 14:04:32.304"></status>
+</kw>
+<kw name="Control Focus" library="AutoItLibrary">
+<doc>method ControlFocus</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>TspCampoMascara38</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:32.304" endtime="20200113 14:04:32.309"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Codigo Assunto}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:32.309" endtime="20200113 14:04:32.371"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:32.421" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:32.372" endtime="20200113 14:04:32.421"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:32.372" endtime="20200113 14:04:32.421"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:32.372" endtime="20200113 14:04:32.421"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:32.371" endtime="20200113 14:04:32.421"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:32.972" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:32.972" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:32.972" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:32.421" endtime="20200113 14:04:32.972"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Tipo Acao ordinaria}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:32.972" endtime="20200113 14:04:32.993"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:33.043" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:32.994" endtime="20200113 14:04:33.043"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:32.994" endtime="20200113 14:04:33.043"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:32.994" endtime="20200113 14:04:33.043"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:32.994" endtime="20200113 14:04:33.043"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:33.604" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:33.604" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:33.604" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:33.043" endtime="20200113 14:04:33.604"></status>
+</kw>
+<kw name="Control Focus" library="AutoItLibrary">
+<doc>method ControlFocus</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>TspCampoMascara44</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:33.604" endtime="20200113 14:04:33.610"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Entidade}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:33.610" endtime="20200113 14:04:33.621"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:33.672" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:33.622" endtime="20200113 14:04:33.672"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:33.622" endtime="20200113 14:04:33.672"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:33.622" endtime="20200113 14:04:33.672"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:33.621" endtime="20200113 14:04:33.672"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20200113 14:04:34.674" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200113 14:04:33.672" endtime="20200113 14:04:34.674"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:31.134" endtime="20200113 14:04:34.674"></status>
+</kw>
+<kw name="Preencher aba partes do processo" library="Cadastroresource">
+<arguments>
+<arg>${Cod parte ativa}</arg>
+<arg>${Cod parte passiva}</arg>
+<arg>${cod representante}</arg>
+</arguments>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!p</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:34.675" endtime="20200113 14:04:34.696"></status>
+</kw>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>AbaPartes.png</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:36.077" level="INFO">Params: [AbaPartes.png, 10]</msg>
+<msg timestamp="20200113 14:04:36.077" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1578935076014.png'/&gt;</msg>
+<status status="PASS" starttime="20200113 14:04:34.696" endtime="20200113 14:04:36.077"></status>
+</kw>
+<kw name="Control Focus" library="AutoItLibrary">
+<doc>method ControlFocus</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>TspCampoMascara12</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:36.077" endtime="20200113 14:04:36.082"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Cod parte ativa}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:36.082" endtime="20200113 14:04:36.104"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:36.156" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:36.105" endtime="20200113 14:04:36.156"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:36.105" endtime="20200113 14:04:36.156"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:36.105" endtime="20200113 14:04:36.156"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:36.105" endtime="20200113 14:04:36.156"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:36.740" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:36.740" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:36.740" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:36.156" endtime="20200113 14:04:36.740"></status>
+</kw>
+<kw name="Clica em Parte passiva" library="ResourceGeral">
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!v</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:36.740" endtime="20200113 14:04:36.762"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:36.740" endtime="20200113 14:04:36.762"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:37.344" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:37.344" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:37.344" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:36.762" endtime="20200113 14:04:37.344"></status>
+</kw>
+<kw name="Control Focus" library="AutoItLibrary">
+<doc>method ControlFocus</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>TspCampoMascara12</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:37.344" endtime="20200113 14:04:37.349"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Cod parte passiva}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:37.349" endtime="20200113 14:04:37.405"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:37.958" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:37.958" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:37.958" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:37.405" endtime="20200113 14:04:37.958"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:38.011" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:37.959" endtime="20200113 14:04:38.011"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:37.959" endtime="20200113 14:04:38.011"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:37.958" endtime="20200113 14:04:38.011"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:37.958" endtime="20200113 14:04:38.011"></status>
+</kw>
+<kw name="Clica em representate" library="ResourceGeral">
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!r</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:38.012" endtime="20200113 14:04:38.033"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:38.011" endtime="20200113 14:04:38.033"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:38.620" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:38.620" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:38.620" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:38.033" endtime="20200113 14:04:38.620"></status>
+</kw>
+<kw name="Control Focus" library="AutoItLibrary">
+<doc>method ControlFocus</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>TspCampoMascara12</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:38.620" endtime="20200113 14:04:38.625"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${cod representante}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:38.625" endtime="20200113 14:04:38.698"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:39.251" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:39.251" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:39.251" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:38.698" endtime="20200113 14:04:39.251"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:39.305" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:39.252" endtime="20200113 14:04:39.305"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:39.252" endtime="20200113 14:04:39.305"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:39.251" endtime="20200113 14:04:39.305"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:39.251" endtime="20200113 14:04:39.305"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:34.674" endtime="20200113 14:04:39.305"></status>
+</kw>
+<kw name="Salvar processo" library="Cadastroresource">
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:39.852" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:39.852" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:39.852" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:39.306" endtime="20200113 14:04:39.852"></status>
+</kw>
+<kw name="Clica em salvar" library="ResourceGeral">
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!s</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:39.852" endtime="20200113 14:04:39.874"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:39.852" endtime="20200113 14:04:39.874"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:40.455" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:40.455" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:40.455" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:39.875" endtime="20200113 14:04:40.455"></status>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>ProCadastramento.png</arg>
+</arguments>
+<msg timestamp="20200113 14:04:41.610" level="INFO">Params: [ProCadastramento.png]</msg>
+<msg timestamp="20200113 14:04:41.610" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1578935080727.png'/&gt;
+[log] CLICK on L[523,318]@S(0) (566 msec)</msg>
+<status status="PASS" starttime="20200113 14:04:40.455" endtime="20200113 14:04:41.610"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:42.148" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:42.148" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:42.148" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:41.610" endtime="20200113 14:04:42.148"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:39.306" endtime="20200113 14:04:42.148"></status>
+</kw>
+<kw name="Cadastrar Precatorio" library="Cadastroresource">
+<arguments>
+<arg>${Tipo Acao Precatorio}</arg>
+<arg>${Natureza}</arg>
+<arg>${Ano}</arg>
+<arg>${Situacao}</arg>
+<arg>${Valor Requisitado}</arg>
+<arg>${Data Oficio}</arg>
+<arg>${Data Recebimento}</arg>
+<arg>${Data base}</arg>
+<arg>${Principal Bruto}</arg>
+<arg>${Juros Compensatorio}</arg>
+<arg>${Juros Moratorio}</arg>
+<arg>${Honorario}</arg>
+<arg>${PE Honorario}</arg>
+</arguments>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:42.687" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:42.687" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:42.687" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:42.149" endtime="20200113 14:04:42.687"></status>
+</kw>
+<kw name="Clica em Inserir" library="ResourceGeral">
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>Inserir.png</arg>
+</arguments>
+<msg timestamp="20200113 14:04:43.731" level="INFO">Params: [Inserir.png]</msg>
+<msg timestamp="20200113 14:04:43.731" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1578935082927.png'/&gt;
+[log] CLICK on L[729,320]@S(0) (538 msec)</msg>
+<status status="PASS" starttime="20200113 14:04:42.688" endtime="20200113 14:04:43.731"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:42.687" endtime="20200113 14:04:43.731"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:44.331" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:44.331" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:44.331" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:43.731" endtime="20200113 14:04:44.331"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Tipo Acao Precatorio}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:44.331" level="INFO">38</msg>
+<status status="PASS" starttime="20200113 14:04:44.331" endtime="20200113 14:04:44.331"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Tipo Acao Precatorio}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:44.332" endtime="20200113 14:04:44.353"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:44.400" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:44.354" endtime="20200113 14:04:44.400"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:44.354" endtime="20200113 14:04:44.400"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:44.354" endtime="20200113 14:04:44.400"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:44.353" endtime="20200113 14:04:44.400"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:44.955" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:44.955" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:44.955" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:44.400" endtime="20200113 14:04:44.955"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Natureza}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:44.955" level="INFO">2</msg>
+<status status="PASS" starttime="20200113 14:04:44.955" endtime="20200113 14:04:44.955"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Natureza}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:44.956" endtime="20200113 14:04:44.966"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:45.014" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:44.967" endtime="20200113 14:04:45.014"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:44.967" endtime="20200113 14:04:45.014"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:44.967" endtime="20200113 14:04:45.014"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:44.967" endtime="20200113 14:04:45.014"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:45.566" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:45.566" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:45.566" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:45.014" endtime="20200113 14:04:45.566"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Numero Judicial do processo}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:45.566" level="INFO">8773019-92.2019.4.11.8916</msg>
+<status status="PASS" starttime="20200113 14:04:45.566" endtime="20200113 14:04:45.567"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Numero Judicial do processo}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:45.567" endtime="20200113 14:04:45.825"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:45.877" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:45.826" endtime="20200113 14:04:45.877"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:45.826" endtime="20200113 14:04:45.877"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:45.826" endtime="20200113 14:04:45.877"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:45.825" endtime="20200113 14:04:45.877"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:46.431" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:46.431" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:46.431" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:45.878" endtime="20200113 14:04:46.431"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Ano}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:46.431" level="INFO">2018</msg>
+<status status="PASS" starttime="20200113 14:04:46.431" endtime="20200113 14:04:46.432"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Ano}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:46.432" endtime="20200113 14:04:46.474"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:46.522" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:46.475" endtime="20200113 14:04:46.522"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:46.475" endtime="20200113 14:04:46.522"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:46.474" endtime="20200113 14:04:46.522"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:46.474" endtime="20200113 14:04:46.522"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:47.075" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:47.075" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:47.075" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:46.522" endtime="20200113 14:04:47.075"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Situacao}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:47.075" level="INFO">3</msg>
+<status status="PASS" starttime="20200113 14:04:47.075" endtime="20200113 14:04:47.076"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Situacao}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:47.076" endtime="20200113 14:04:47.086"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<arguments>
+<arg>2</arg>
+</arguments>
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:47.135" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:47.087" endtime="20200113 14:04:47.136"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:47.087" endtime="20200113 14:04:47.136"></status>
+</kw>
+<kw name="${INDEX} = 1" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:47.183" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:47.136" endtime="20200113 14:04:47.183"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:47.136" endtime="20200113 14:04:47.183"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:47.087" endtime="20200113 14:04:47.183"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:47.087" endtime="20200113 14:04:47.183"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:47.733" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:47.733" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:47.733" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:47.184" endtime="20200113 14:04:47.733"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Valor Requisitado}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:47.733" level="INFO">1</msg>
+<status status="PASS" starttime="20200113 14:04:47.733" endtime="20200113 14:04:47.733"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Valor Requisitado}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:47.734" endtime="20200113 14:04:47.745"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<arguments>
+<arg>5</arg>
+</arguments>
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:47.797" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:47.746" endtime="20200113 14:04:47.797"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:47.745" endtime="20200113 14:04:47.797"></status>
+</kw>
+<kw name="${INDEX} = 1" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:47.844" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:47.797" endtime="20200113 14:04:47.844"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:47.797" endtime="20200113 14:04:47.844"></status>
+</kw>
+<kw name="${INDEX} = 2" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:47.891" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:47.844" endtime="20200113 14:04:47.891"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:47.844" endtime="20200113 14:04:47.891"></status>
+</kw>
+<kw name="${INDEX} = 3" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:47.942" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:47.891" endtime="20200113 14:04:47.942"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:47.891" endtime="20200113 14:04:47.942"></status>
+</kw>
+<kw name="${INDEX} = 4" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:47.989" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:47.942" endtime="20200113 14:04:47.990"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:47.942" endtime="20200113 14:04:47.990"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:47.745" endtime="20200113 14:04:47.990"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:47.745" endtime="20200113 14:04:47.990"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:48.545" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:48.545" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:48.545" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:47.990" endtime="20200113 14:04:48.545"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Data Oficio}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:48.545" level="INFO">01012018</msg>
+<status status="PASS" starttime="20200113 14:04:48.545" endtime="20200113 14:04:48.546"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Data Oficio}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:48.546" endtime="20200113 14:04:48.629"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:48.678" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:48.630" endtime="20200113 14:04:48.678"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:48.630" endtime="20200113 14:04:48.678"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:48.629" endtime="20200113 14:04:48.678"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:48.629" endtime="20200113 14:04:48.679"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:49.230" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:49.230" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:49.230" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:48.679" endtime="20200113 14:04:49.230"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Data Recebimento}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:49.230" level="INFO">02012018</msg>
+<status status="PASS" starttime="20200113 14:04:49.230" endtime="20200113 14:04:49.231"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Data Recebimento}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:49.231" endtime="20200113 14:04:49.314"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:49.363" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:49.316" endtime="20200113 14:04:49.363"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:49.316" endtime="20200113 14:04:49.363"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:49.315" endtime="20200113 14:04:49.363"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:49.314" endtime="20200113 14:04:49.363"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:49.917" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:49.917" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:49.917" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:49.363" endtime="20200113 14:04:49.917"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!u</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:49.917" endtime="20200113 14:04:49.938"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:50.503" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:50.503" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:50.503" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:49.939" endtime="20200113 14:04:50.503"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:50.555" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:50.504" endtime="20200113 14:04:50.555"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:50.504" endtime="20200113 14:04:50.555"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:50.504" endtime="20200113 14:04:50.555"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:50.503" endtime="20200113 14:04:50.555"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:51.106" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:51.106" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:51.106" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:50.556" endtime="20200113 14:04:51.106"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Data base}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:51.106" level="INFO">03012018</msg>
+<status status="PASS" starttime="20200113 14:04:51.106" endtime="20200113 14:04:51.107"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Data base}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:51.107" endtime="20200113 14:04:51.190"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:51.238" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:51.191" endtime="20200113 14:04:51.238"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:51.191" endtime="20200113 14:04:51.238"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:51.191" endtime="20200113 14:04:51.238"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:51.190" endtime="20200113 14:04:51.238"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:51.789" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:51.789" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:51.789" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:51.238" endtime="20200113 14:04:51.789"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Principal Bruto}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:51.789" level="INFO">50000</msg>
+<status status="PASS" starttime="20200113 14:04:51.789" endtime="20200113 14:04:51.789"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Principal Bruto}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:51.790" endtime="20200113 14:04:51.841"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:51.889" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:51.842" endtime="20200113 14:04:51.889"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:51.842" endtime="20200113 14:04:51.889"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:51.842" endtime="20200113 14:04:51.889"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:51.842" endtime="20200113 14:04:51.889"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:52.440" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:52.440" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:52.440" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:51.889" endtime="20200113 14:04:52.440"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Juros Compensatorio}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:52.440" level="INFO">10000</msg>
+<status status="PASS" starttime="20200113 14:04:52.440" endtime="20200113 14:04:52.441"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Juros Compensatorio}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:52.441" endtime="20200113 14:04:52.492"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:52.539" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:52.493" endtime="20200113 14:04:52.539"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:52.493" endtime="20200113 14:04:52.539"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:52.493" endtime="20200113 14:04:52.539"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:52.493" endtime="20200113 14:04:52.539"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:53.087" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:53.087" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:53.087" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:52.539" endtime="20200113 14:04:53.087"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Juros Moratorio}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:53.087" level="INFO">20000</msg>
+<status status="PASS" starttime="20200113 14:04:53.087" endtime="20200113 14:04:53.087"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Juros Moratorio}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:53.088" endtime="20200113 14:04:53.140"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:53.187" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:53.140" endtime="20200113 14:04:53.187"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:53.140" endtime="20200113 14:04:53.187"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:53.140" endtime="20200113 14:04:53.187"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:53.140" endtime="20200113 14:04:53.187"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:53.743" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:53.743" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:53.743" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:53.187" endtime="20200113 14:04:53.743"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Honorario}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:53.743" level="INFO">30000</msg>
+<status status="PASS" starttime="20200113 14:04:53.743" endtime="20200113 14:04:53.743"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Honorario}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:53.744" endtime="20200113 14:04:53.796"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<arguments>
+<arg>2</arg>
+</arguments>
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:53.844" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:53.797" endtime="20200113 14:04:53.844"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:53.797" endtime="20200113 14:04:53.844"></status>
+</kw>
+<kw name="${INDEX} = 1" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:53.891" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:53.844" endtime="20200113 14:04:53.891"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:53.844" endtime="20200113 14:04:53.891"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:53.796" endtime="20200113 14:04:53.891"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:53.796" endtime="20200113 14:04:53.891"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:54.441" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:54.441" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:54.441" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:53.891" endtime="20200113 14:04:54.441"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${PE Honorario}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:54.441" level="INFO">10</msg>
+<status status="PASS" starttime="20200113 14:04:54.441" endtime="20200113 14:04:54.442"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${PE Honorario}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:54.442" endtime="20200113 14:04:54.463"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:04:54.511" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:04:54.464" endtime="20200113 14:04:54.511"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:54.464" endtime="20200113 14:04:54.511"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:54.463" endtime="20200113 14:04:54.511"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:54.463" endtime="20200113 14:04:54.511"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:55.063" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:55.063" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:55.063" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:54.511" endtime="20200113 14:04:55.063"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:55.615" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:55.615" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:55.615" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:55.063" endtime="20200113 14:04:55.615"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!P</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:55.615" endtime="20200113 14:04:55.637"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:56.495" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:56.495" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:56.495" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:55.637" endtime="20200113 14:04:56.495"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!C</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:56.495" endtime="20200113 14:04:56.517"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>Seleção de Partes para Cópia</arg>
+<arg>${EMPTY}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:57.150" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='Seleção de Partes para Cópia', WindowText='', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:57.150" level="INFO">AutoItLibrary.WinWait(WindowTitle='Seleção de Partes para Cópia', WindowText='', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:57.150" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='Seleção de Partes para Cópia', WindowText='', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:56.517" endtime="20200113 14:04:57.150"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!T</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:57.150" endtime="20200113 14:04:57.172"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>Seleção de Partes para Cópia</arg>
+<arg>${EMPTY}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:57.695" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='Seleção de Partes para Cópia', WindowText='', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:57.695" level="INFO">AutoItLibrary.WinWait(WindowTitle='Seleção de Partes para Cópia', WindowText='', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:57.695" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='Seleção de Partes para Cópia', WindowText='', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:57.172" endtime="20200113 14:04:57.695"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!p</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:04:57.695" endtime="20200113 14:04:57.717"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:58.515" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:58.515" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:58.515" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:57.717" endtime="20200113 14:04:58.515"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Terminei</arg>
+</arguments>
+<msg timestamp="20200113 14:04:58.515" level="INFO">Terminei</msg>
+<status status="PASS" starttime="20200113 14:04:58.515" endtime="20200113 14:04:58.516"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:42.148" endtime="20200113 14:04:58.516"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:25.627" endtime="20200113 14:04:58.516"></status>
+</kw>
+<kw name="Confirmar que foi salvo corretamente" library="Cadastroresource">
+<kw name="Check If Exists In Database" library="DatabaseLibrary">
+<doc>Check if any row would be returned by given the input `selectStatement`. If there are no results, then this will
+throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit transaction
+commit or rollback.</doc>
+<arguments>
+<arg>select * from espjProcesso where nucnjformatado = '${Numero judicial do processo}'</arg>
+</arguments>
+<msg timestamp="20200113 14:04:58.517" level="INFO">Executing : Check If Exists In Database  |  select * from espjProcesso where nucnjformatado = '8773019-92.2019.4.11.8916' </msg>
+<msg timestamp="20200113 14:04:58.517" level="INFO">Executing : Query  |  select * from espjProcesso where nucnjformatado = '8773019-92.2019.4.11.8916' </msg>
+<status status="PASS" starttime="20200113 14:04:58.517" endtime="20200113 14:04:59.099"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:58.516" endtime="20200113 14:04:59.099"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:25.625" endtime="20200113 14:04:59.099"></status>
+</kw>
+<kw name="E Cadastrar Precatorio">
+<kw name="Gerar número randômico de processos" library="ResourceGeral">
+<kw name="Random Int" library="FakerLibrary">
+<doc>Returns a random integer between two values.</doc>
+<arguments>
+<arg>min=1000000</arg>
+<arg>max=9999999</arg>
+</arguments>
+<assign>
+<var>${Numero aleatorio}</var>
+</assign>
+<msg timestamp="20200113 14:04:59.100" level="INFO">${Numero aleatorio} = 1944842</msg>
+<status status="PASS" starttime="20200113 14:04:59.100" endtime="20200113 14:04:59.100"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${Numero aleatorio}</arg>
+<arg>-92.2019.4.11.8916</arg>
+</arguments>
+<assign>
+<var>${Numero judicial do processo}</var>
+</assign>
+<msg timestamp="20200113 14:04:59.101" level="INFO">${Numero judicial do processo} = 1944842-92.2019.4.11.8916</msg>
+<status status="PASS" starttime="20200113 14:04:59.101" endtime="20200113 14:04:59.101"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Numero judicial do processo}</arg>
+</arguments>
+<msg timestamp="20200113 14:04:59.102" level="INFO">${Numero judicial do processo} = 1944842-92.2019.4.11.8916</msg>
+<status status="PASS" starttime="20200113 14:04:59.101" endtime="20200113 14:04:59.102"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:59.100" endtime="20200113 14:04:59.102"></status>
+</kw>
+<kw name="Cadastrar Precatorio" library="Cadastroresource">
+<arguments>
+<arg>${Tipo Acao Precatorio}</arg>
+<arg>${Natureza}</arg>
+<arg>${Ano}</arg>
+<arg>${Situacao}</arg>
+<arg>${Valor Requisitado}</arg>
+<arg>${Data Oficio}</arg>
+<arg>${Data Recebimento}</arg>
+<arg>${Data base}</arg>
+<arg>${Principal Bruto}</arg>
+<arg>${Juros Compensatorio}</arg>
+<arg>${Juros Moratorio}</arg>
+<arg>${Honorario}</arg>
+<arg>${PE Honorario}</arg>
+</arguments>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:04:59.943" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:59.943" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:04:59.943" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:04:59.103" endtime="20200113 14:04:59.943"></status>
+</kw>
+<kw name="Clica em Inserir" library="ResourceGeral">
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>Inserir.png</arg>
+</arguments>
+<msg timestamp="20200113 14:05:00.946" level="INFO">Params: [Inserir.png]</msg>
+<msg timestamp="20200113 14:05:00.946" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1578935100177.png'/&gt;
+[log] CLICK on L[728,319]@S(0) (543 msec)</msg>
+<status status="PASS" starttime="20200113 14:04:59.943" endtime="20200113 14:05:00.946"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:59.943" endtime="20200113 14:05:00.946"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:01.547" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:01.547" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:01.547" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:00.947" endtime="20200113 14:05:01.547"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Tipo Acao Precatorio}</arg>
+</arguments>
+<msg timestamp="20200113 14:05:01.547" level="INFO">38</msg>
+<status status="PASS" starttime="20200113 14:05:01.547" endtime="20200113 14:05:01.548"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Tipo Acao Precatorio}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:01.548" endtime="20200113 14:05:01.570"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:01.617" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:01.571" endtime="20200113 14:05:01.617"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:01.570" endtime="20200113 14:05:01.617"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:01.570" endtime="20200113 14:05:01.617"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:01.570" endtime="20200113 14:05:01.617"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:02.167" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:02.167" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:02.167" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:01.617" endtime="20200113 14:05:02.167"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Natureza}</arg>
+</arguments>
+<msg timestamp="20200113 14:05:02.167" level="INFO">2</msg>
+<status status="PASS" starttime="20200113 14:05:02.167" endtime="20200113 14:05:02.168"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Natureza}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:02.168" endtime="20200113 14:05:02.178"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:02.226" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:02.179" endtime="20200113 14:05:02.226"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:02.179" endtime="20200113 14:05:02.226"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:02.179" endtime="20200113 14:05:02.226"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:02.179" endtime="20200113 14:05:02.226"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:02.778" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:02.778" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:02.778" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:02.226" endtime="20200113 14:05:02.778"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Numero Judicial do processo}</arg>
+</arguments>
+<msg timestamp="20200113 14:05:02.779" level="INFO">1944842-92.2019.4.11.8916</msg>
+<status status="PASS" starttime="20200113 14:05:02.778" endtime="20200113 14:05:02.779"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Numero Judicial do processo}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:02.779" endtime="20200113 14:05:03.035"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:03.082" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:03.036" endtime="20200113 14:05:03.082"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:03.036" endtime="20200113 14:05:03.082"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:03.036" endtime="20200113 14:05:03.082"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:03.036" endtime="20200113 14:05:03.082"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:03.640" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:03.640" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:03.640" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:03.083" endtime="20200113 14:05:03.640"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Ano}</arg>
+</arguments>
+<msg timestamp="20200113 14:05:03.640" level="INFO">2018</msg>
+<status status="PASS" starttime="20200113 14:05:03.640" endtime="20200113 14:05:03.641"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Ano}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:03.641" endtime="20200113 14:05:03.682"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:03.730" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:03.683" endtime="20200113 14:05:03.730"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:03.683" endtime="20200113 14:05:03.730"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:03.683" endtime="20200113 14:05:03.730"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:03.683" endtime="20200113 14:05:03.730"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:04.283" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:04.283" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:04.283" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:03.730" endtime="20200113 14:05:04.283"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Situacao}</arg>
+</arguments>
+<msg timestamp="20200113 14:05:04.283" level="INFO">3</msg>
+<status status="PASS" starttime="20200113 14:05:04.283" endtime="20200113 14:05:04.284"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Situacao}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:04.284" endtime="20200113 14:05:04.295"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<arguments>
+<arg>2</arg>
+</arguments>
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:04.343" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:04.295" endtime="20200113 14:05:04.343"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:04.295" endtime="20200113 14:05:04.343"></status>
+</kw>
+<kw name="${INDEX} = 1" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:04.390" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:04.343" endtime="20200113 14:05:04.390"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:04.343" endtime="20200113 14:05:04.390"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:04.295" endtime="20200113 14:05:04.390"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:04.295" endtime="20200113 14:05:04.390"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:04.943" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:04.943" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:04.943" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:04.390" endtime="20200113 14:05:04.943"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Valor Requisitado}</arg>
+</arguments>
+<msg timestamp="20200113 14:05:04.944" level="INFO">1</msg>
+<status status="PASS" starttime="20200113 14:05:04.943" endtime="20200113 14:05:04.944"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Valor Requisitado}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:04.944" endtime="20200113 14:05:04.955"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<arguments>
+<arg>5</arg>
+</arguments>
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:05.002" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:04.955" endtime="20200113 14:05:05.002"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:04.955" endtime="20200113 14:05:05.002"></status>
+</kw>
+<kw name="${INDEX} = 1" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:05.049" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:05.002" endtime="20200113 14:05:05.049"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:05.002" endtime="20200113 14:05:05.049"></status>
+</kw>
+<kw name="${INDEX} = 2" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:05.095" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:05.049" endtime="20200113 14:05:05.095"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:05.049" endtime="20200113 14:05:05.095"></status>
+</kw>
+<kw name="${INDEX} = 3" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:05.142" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:05.095" endtime="20200113 14:05:05.142"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:05.095" endtime="20200113 14:05:05.142"></status>
+</kw>
+<kw name="${INDEX} = 4" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:05.188" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:05.142" endtime="20200113 14:05:05.188"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:05.142" endtime="20200113 14:05:05.188"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:04.955" endtime="20200113 14:05:05.188"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:04.955" endtime="20200113 14:05:05.188"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:05.740" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:05.740" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:05.740" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:05.188" endtime="20200113 14:05:05.740"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Data Oficio}</arg>
+</arguments>
+<msg timestamp="20200113 14:05:05.740" level="INFO">01012018</msg>
+<status status="PASS" starttime="20200113 14:05:05.740" endtime="20200113 14:05:05.740"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Data Oficio}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:05.741" endtime="20200113 14:05:05.823"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:05.871" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:05.824" endtime="20200113 14:05:05.871"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:05.824" endtime="20200113 14:05:05.871"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:05.824" endtime="20200113 14:05:05.871"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:05.823" endtime="20200113 14:05:05.871"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:06.423" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:06.423" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:06.423" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:05.871" endtime="20200113 14:05:06.423"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Data Recebimento}</arg>
+</arguments>
+<msg timestamp="20200113 14:05:06.423" level="INFO">02012018</msg>
+<status status="PASS" starttime="20200113 14:05:06.423" endtime="20200113 14:05:06.424"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Data Recebimento}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:06.424" endtime="20200113 14:05:06.506"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:06.553" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:06.507" endtime="20200113 14:05:06.553"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:06.507" endtime="20200113 14:05:06.553"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:06.506" endtime="20200113 14:05:06.553"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:06.506" endtime="20200113 14:05:06.553"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:07.106" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:07.106" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:07.106" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:06.553" endtime="20200113 14:05:07.106"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!u</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:07.106" endtime="20200113 14:05:07.127"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:07.677" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:07.677" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:07.677" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:07.128" endtime="20200113 14:05:07.677"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:07.729" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:07.678" endtime="20200113 14:05:07.729"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:07.678" endtime="20200113 14:05:07.729"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:07.677" endtime="20200113 14:05:07.729"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:07.677" endtime="20200113 14:05:07.729"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:08.281" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:08.281" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:08.281" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:07.729" endtime="20200113 14:05:08.281"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Data base}</arg>
+</arguments>
+<msg timestamp="20200113 14:05:08.281" level="INFO">03012018</msg>
+<status status="PASS" starttime="20200113 14:05:08.281" endtime="20200113 14:05:08.282"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Data base}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:08.282" endtime="20200113 14:05:08.364"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:08.412" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:08.366" endtime="20200113 14:05:08.412"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:08.365" endtime="20200113 14:05:08.412"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:08.365" endtime="20200113 14:05:08.412"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:08.365" endtime="20200113 14:05:08.412"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:08.966" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:08.966" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:08.966" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:08.412" endtime="20200113 14:05:08.966"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Principal Bruto}</arg>
+</arguments>
+<msg timestamp="20200113 14:05:08.966" level="INFO">50000</msg>
+<status status="PASS" starttime="20200113 14:05:08.966" endtime="20200113 14:05:08.967"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Principal Bruto}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:08.967" endtime="20200113 14:05:09.019"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:09.066" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:09.020" endtime="20200113 14:05:09.066"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:09.020" endtime="20200113 14:05:09.066"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:09.019" endtime="20200113 14:05:09.066"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:09.019" endtime="20200113 14:05:09.066"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:09.619" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:09.619" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:09.619" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:09.067" endtime="20200113 14:05:09.619"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Juros Compensatorio}</arg>
+</arguments>
+<msg timestamp="20200113 14:05:09.620" level="INFO">10000</msg>
+<status status="PASS" starttime="20200113 14:05:09.619" endtime="20200113 14:05:09.620"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Juros Compensatorio}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:09.620" endtime="20200113 14:05:09.672"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:09.719" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:09.673" endtime="20200113 14:05:09.719"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:09.672" endtime="20200113 14:05:09.719"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:09.672" endtime="20200113 14:05:09.719"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:09.672" endtime="20200113 14:05:09.719"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:10.267" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:10.267" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:10.267" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:09.719" endtime="20200113 14:05:10.267"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Juros Moratorio}</arg>
+</arguments>
+<msg timestamp="20200113 14:05:10.267" level="INFO">20000</msg>
+<status status="PASS" starttime="20200113 14:05:10.267" endtime="20200113 14:05:10.268"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Juros Moratorio}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:10.268" endtime="20200113 14:05:10.319"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:10.367" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:10.320" endtime="20200113 14:05:10.367"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:10.320" endtime="20200113 14:05:10.367"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:10.319" endtime="20200113 14:05:10.367"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:10.319" endtime="20200113 14:05:10.367"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:10.915" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:10.915" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:10.915" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:10.367" endtime="20200113 14:05:10.915"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Honorario}</arg>
+</arguments>
+<msg timestamp="20200113 14:05:10.915" level="INFO">30000</msg>
+<status status="PASS" starttime="20200113 14:05:10.915" endtime="20200113 14:05:10.915"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${Honorario}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:10.916" endtime="20200113 14:05:10.968"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<arguments>
+<arg>2</arg>
+</arguments>
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:11.015" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:10.969" endtime="20200113 14:05:11.015"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:10.968" endtime="20200113 14:05:11.015"></status>
+</kw>
+<kw name="${INDEX} = 1" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:11.062" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:11.016" endtime="20200113 14:05:11.062"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:11.015" endtime="20200113 14:05:11.062"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:10.968" endtime="20200113 14:05:11.062"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:10.968" endtime="20200113 14:05:11.062"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:11.614" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:11.614" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:11.614" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:11.062" endtime="20200113 14:05:11.614"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${PE Honorario}</arg>
+</arguments>
+<msg timestamp="20200113 14:05:11.614" level="INFO">10</msg>
+<status status="PASS" starttime="20200113 14:05:11.614" endtime="20200113 14:05:11.615"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${PE Honorario}</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:11.615" endtime="20200113 14:05:11.636"></status>
+</kw>
+<kw name="Aperta o Tab" library="ResourceGeral">
+<kw name="${INDEX} IN RANGE [ 0 | ${VEZES} ]" type="for">
+<kw name="${INDEX} = 0" type="foritem">
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>TAB</arg>
+</arguments>
+<msg timestamp="20200113 14:05:11.683" level="INFO">Params: [TAB]
+[log]  TYPE "#TAB."</msg>
+<status status="PASS" starttime="20200113 14:05:11.637" endtime="20200113 14:05:11.683"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:11.636" endtime="20200113 14:05:11.683"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:11.636" endtime="20200113 14:05:11.683"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:05:11.636" endtime="20200113 14:05:11.683"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:12.234" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:12.234" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:12.234" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:11.683" endtime="20200113 14:05:12.234"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:12.786" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:12.786" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:12.786" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:12.234" endtime="20200113 14:05:12.786"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!P</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:12.786" endtime="20200113 14:05:12.808"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:13.796" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:13.796" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:13.796" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:12.808" endtime="20200113 14:05:13.796"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!C</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:13.796" endtime="20200113 14:05:13.818"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>Seleção de Partes para Cópia</arg>
+<arg>${EMPTY}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:14.452" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='Seleção de Partes para Cópia', WindowText='', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:14.452" level="INFO">AutoItLibrary.WinWait(WindowTitle='Seleção de Partes para Cópia', WindowText='', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:14.452" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='Seleção de Partes para Cópia', WindowText='', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:13.818" endtime="20200113 14:05:14.452"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!T</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:14.452" endtime="20200113 14:05:14.474"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>Seleção de Partes para Cópia</arg>
+<arg>${EMPTY}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:14.998" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='Seleção de Partes para Cópia', WindowText='', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:14.998" level="INFO">AutoItLibrary.WinWait(WindowTitle='Seleção de Partes para Cópia', WindowText='', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:14.998" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='Seleção de Partes para Cópia', WindowText='', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:14.475" endtime="20200113 14:05:14.998"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>!p</arg>
+</arguments>
+<status status="PASS" starttime="20200113 14:05:14.998" endtime="20200113 14:05:15.019"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Cadastro de Processos Judiciais}</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20200113 14:05:15.817" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:15.817" level="INFO">AutoItLibrary.WinWait(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<msg timestamp="20200113 14:05:15.817" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='', WindowText='Cadastro de Processos Judiciais', TimeOut=10)</msg>
+<status status="PASS" starttime="20200113 14:05:15.020" endtime="20200113 14:05:15.817"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Terminei</arg>
+</arguments>
+<msg timestamp="20200113 14:05:15.817" level="INFO">Terminei</msg>
+<status status="PASS" starttime="20200113 14:05:15.817" endtime="20200113 14:05:15.817"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:59.102" endtime="20200113 14:05:15.818"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:59.099" endtime="20200113 14:05:15.818"></status>
+</kw>
+<status status="PASS" starttime="20200113 14:04:22.243" endtime="20200113 14:05:15.818" critical="yes"></status>
+</test>
+<doc>Teste Precatorio</doc>
+<status status="PASS" starttime="20200113 14:04:14.701" endtime="20200113 14:05:15.819"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Cadastrorequisitorios">Cadastrorequisitorios</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

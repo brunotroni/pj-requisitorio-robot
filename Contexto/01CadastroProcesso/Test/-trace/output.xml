@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.3 on win32)" generated="20200113 09:38:43.923" rpa="false">
+<suite id="s1" name=".Results &amp; Cadastrorequisitorios">
+<suite id="s1-s1" name=".Results" source="F:\pj-requisitorio-robot\Contexto\01CadastroProcesso\Test\.results">
+<status status="PASS" starttime="20200113 09:38:43.965" endtime="20200113 09:38:43.967"></status>
+</suite>
+<suite id="s1-s2" name="Cadastrorequisitorios" source="F:\pj-requisitorio-robot\Contexto\01CadastroProcesso\Test\Cadastrorequisitorios.robot">
+<test id="s1-s2-t1" name="Cenario 02:Cadastrar acao ordinaria">
+<kw name="Carrega diretório de imagens" library="Cadastroresource" type="setup">
+<kw name="Add Image Path" library="SikuliLibrary">
+<doc>Add image path</doc>
+<arguments>
+<arg>${IMAGE_DIR}</arg>
+</arguments>
+<msg timestamp="20200113 09:38:50.375" level="INFO">Params: [F:\pj-requisitorio-robot\Contexto\01CadastroProcesso\Resource\images]</msg>
+<status status="PASS" starttime="20200113 09:38:50.361" endtime="20200113 09:38:50.376"></status>
+</kw>
+<kw name="Conectar no banco" library="ResourceBD">
+<kw name="Connect To Database Using Custom Params" library="DatabaseLibrary">
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using the map string `db_custom_param_string`.</doc>
+<arguments>
+<arg>cx_Oracle</arg>
+<arg>${CONEXAO_BANCO}</arg>
+</arguments>
+<msg timestamp="20200113 09:38:50.379" level="INFO">Executing : Connect To Database Using Custom Params : cx_Oracle.connect(db_api_2.connect('saj/agesune1@PRJXSP')) </msg>
+<status status="PASS" starttime="20200113 09:38:50.376" endtime="20200113 09:38:50.522"></status>
+</kw>
+<status status="PASS" starttime="20200113 09:38:50.376" endtime="20200113 09:38:50.522"></status>
+</kw>
+<status status="PASS" starttime="20200113 09:38:50.361" endtime="20200113 09:38:50.522"></status>
+</kw>
+<kw name="Dado a tela de cadastro de processos judiciais">
+<kw name="Abrir janela de cadastro de processos judiciais" library="Cadastroresource">
+<kw name="Abre janela Cadastro de PROCESSO" library="ResourceGeral">
+<kw name="Send" library="Cadastroresource">
+<arguments>
+<arg>{ALT}</arg>
+</arguments>
+<msg timestamp="20200113 09:38:50.524" level="FAIL">Keyword 'Cadastroresource.Send' expected 0 arguments, got 1.</msg>
+<status status="FAIL" starttime="20200113 09:38:50.523" endtime="20200113 09:38:50.524"></status>
+</kw>
+<status status="FAIL" starttime="20200113 09:38:50.523" endtime="20200113 09:38:50.524"></status>
+</kw>
+<status status="FAIL" starttime="20200113 09:38:50.523" endtime="20200113 09:38:50.524"></status>
+</kw>
+<status status="FAIL" starttime="20200113 09:38:50.523" endtime="20200113 09:38:50.524"></status>
+</kw>
+<status status="FAIL" starttime="20200113 09:38:50.360" endtime="20200113 09:38:50.524" critical="yes">Keyword 'Cadastroresource.Send' expected 0 arguments, got 1.</status>
+</test>
+<doc>Teste Precatorio</doc>
+<status status="FAIL" starttime="20200113 09:38:43.968" endtime="20200113 09:38:50.525"></status>
+</suite>
+<status status="FAIL" starttime="20200113 09:38:43.926" endtime="20200113 09:38:50.525"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name=".Results &amp; Cadastrorequisitorios">.Results &amp; Cadastrorequisitorios</stat>
+<stat pass="0" fail="0" id="s1-s1" name=".Results">.Results &amp; Cadastrorequisitorios..Results</stat>
+<stat pass="0" fail="1" id="s1-s2" name="Cadastrorequisitorios">.Results &amp; Cadastrorequisitorios.Cadastrorequisitorios</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
