@@ -5,7 +5,7 @@ Library           AutoItLibrary
 Resource          ../Resource/Cadastroresource.robot
 Resource          ../../Resource/ResourceGeral.robot
 Test Setup        Carrega diretório de imagens
-#Test Teardown     Fecha testador
+Test Teardown     Fecha testador
 
 *** Variables ***
 ## Cadastro de processo AÇÃO ORDINARIA##
@@ -50,7 +50,8 @@ Cenario 02:Cadastrar acao ordinaria
   Dado a tela de cadastro de processos judiciais
   Quando cadastro o processo de acao ordinaria
   E Cadastrar Precatorio
-  # Então o processo deve ser incluido na base
+  E Distribui os valores
+  Então Confirmar que foi salvo Precatorio
 
 # Cenario 03:Cadastrar Precatorio
 #   Dado que tenha os dados necessarios do Precatorio
@@ -88,10 +89,11 @@ Quando cadastro o processo de acao ordinaria
   ...                           ${Cod parte ativa}
   ...                           ${Cod parte passiva}
   ...                           ${cod representante}
-  Confirmar que foi salvo corretamente
+  Confirmar que foi salvo acao
 E Cadastrar Precatorio
   Gerar número randômico de processos
-  Cadastrar Precatorio   ${Tipo Acao Precatorio}
+  log                    ${Numero judicial do processo}
+  Inserir Precatorio     ${Tipo Acao Precatorio}
   ...                    ${Natureza}
   ...                    ${Ano}
   ...                    ${Situacao}
@@ -104,7 +106,10 @@ E Cadastrar Precatorio
   ...                    ${Juros Moratorio}
   ...                    ${Honorario}
   ...                    ${PE Honorario}
-
+E Distribui os valores
+  E Distribuir os valores
+Então Confirmar que foi salvo Precatorio
+  Confirmar que foi salvo Precatorio
 # Então o processo deve ser incluido na base
 #
 #

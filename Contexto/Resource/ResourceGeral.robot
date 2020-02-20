@@ -21,7 +21,7 @@ ${pathTestador}             F:\\SAJ\\Topo\\
 Fecha testador
       Sleep    3
 #      Terminate Process         ${Process testador}  kill=True
-      Terminate Process         ${Process cliente}  kill=True
+#      Terminate Process         ${Process cliente}  kill=True
       Stop Remote Server
 
 Abrir Testador
@@ -38,11 +38,11 @@ INICIA PRJ
           Press Special Key         ENTER
           Wait For Active Window      SAJ/PJ - Procuradoria Jurídica  ${EMPTY}   10
 Abre janela Cadastro de PROCESSO
-  Log                       Passei
+
   Send                      {ALT}
   Send                      p
   Send                      p
-  Wait For Active Window    ${EMPTY}    Cadastro de Processos Judiciais
+  Wait For Active Window    ${EMPTY}    Cadastro de Processos Judiciais   10
   Sleep                     1
 
 Gerar número randômico de processos
@@ -65,3 +65,6 @@ Clica em salvar
   Send                    !s
 Clica em Inserir
   Click                     Inserir.png
+
+# Nivel Sikuli
+#   Set Min Similarity    82
