@@ -62,9 +62,13 @@ Clica em Parte passiva
 Clica em representate
   send     !r
 Clica em salvar
-  Send                    !s
+  Click    Salvar.png
+  # Send                    !s
 Clica em Inserir
-  Click                     Inserir.png
-
-# Nivel Sikuli
-#   Set Min Similarity    82
+  Click    Inserir.png
+Clica em Editar
+  Click                 Editar.png
+Clica em Fechar
+  Click    Fechar.png
+Aperta ENTER
+  Press Special Key       ENTER

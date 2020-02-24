@@ -27,37 +27,37 @@ Carrega diretório de imagens
     Conectar no banco
 
 
-    ###### CENÁRIO 1 #########
+    ##### CENÁRIO 1 #########
 
-# Verificar se ja esta cadastrado na base
-# ###### VERIFICA SE JÁ EXISTE O CADASTRO ######
-#   Check If Not Exists In Database    select cdprocesso from eprcWsreq where cdprocessoreqtj = '${cdprocessoWS}'
-#
-# Executar testador
-#   Abrir Testador
-#
-# Abrir menu cadastrar requisitorio digital
-#   Send                      {ALT}
-#   Send                      w
-#   Send                      c
-#   Wait For Active Window    Cadasrar Requisitório - WS  ${EMPTY}  10
-#
-# Informar cdProcessoreqtj
-#   Send                      ${cdprocessoWS}
-#   Press Special Key         ENTER
-#
-# Aguardar confirmacao de processamento
-#   Win Wait Active           ${EMPTY}  ${telaConfirmacao}  240
-#
-# Verificar requisitorio no Cadastro de Processos
-#   INICIA PRJ
-#   Abre janela Cadastro de PROCESSO
-# ###### PREENCHE TELA ######
-#   Send                      ${nuprocessoWS}
-#   Sleep                     2
-#   Press Special Key         ENTER
-#   Sleep                     1
-#   Screen Should Contain     opv.PNG
+Verificar se ja esta cadastrado na base
+###### VERIFICA SE JÁ EXISTE O CADASTRO ######
+  Check If Not Exists In Database    select cdprocesso from eprcWsreq where cdprocessoreqtj = '${cdprocessoWS}'
+
+Executar testador
+  Abrir Testador
+
+Abrir menu cadastrar requisitorio digital
+  Send                      {ALT}
+  Send                      w
+  Send                      c
+  Wait For Active Window    Cadasrar Requisitório - WS  ${EMPTY}  10
+
+Informar cdProcessoreqtj
+  Send                      ${cdprocessoWS}
+  Aperta ENTER
+
+Aguardar confirmacao de processamento
+  Win Wait Active           ${EMPTY}  ${telaConfirmacao}  12
+
+Verificar requisitorio no Cadastro de Processos
+  INICIA PRJ
+  Abre janela Cadastro de PROCESSO
+###### PREENCHE TELA ######
+  Send                      ${nuprocessoWS}
+  Sleep                     2
+  Aperta ENTER
+  Sleep                     1
+  Screen Should Contain     opv.PNG
 
       ###### CENÁRIO 2 #########
 Abrir janela de cadastro de processos judiciais
@@ -79,32 +79,33 @@ Cadastrar Processo ordinario
     ## Partes ##
   ...                           ${Cod parte ativa}
   ...                           ${Cod parte passiva}
-  ...
+  ...                           ${cod representante}
   ####LOG                          ${cod representante}
-  Log To Console   ----> Novo Processo    ${EMPTY}     no_newline=True
+  #Log To Console   ----> Novo Processo
 
   Preencher dados novo processo     ${Codigo Tribunal}
   ...                               ${Codigo Orgao Judicial}
   ...                               ${Num Juizo}
-####LOG
-  Log To Console   ----> Dados Principais    ${EMPTY}     no_newline=True
+
+  #Log To Console   ----> Dados Principais
 
   Preencher aba dados principais    ${Codigo Area}
   ...                               ${Codigo Assunto}
   ...                               ${Tipo Acao ordinaria}
   ...                               ${Entidade}
 ####LOG
-  Log To Console   ----> Partes    ${EMPTY}     no_newline=True
+  #Log To Console   ----> Partes
 
   Preencher aba partes do processo  ${Cod parte ativa}  ${Cod parte passiva}   ${cod representante}
 
 ####LOG
-  Log To Console   ----> Salvar Processo    ${EMPTY}     no_newline=True
+  #Log To Console   ----> Salvar Processo
 
   Salvar processo
 
 Preencher dados novo processo
   [Arguments]  ${Codigo Tribunal}  ${Codigo Orgao Judicial}  ${Num Juizo}
+  #Log To Console   ----> Novo Processo
   ControlFocus            ${EMPTY}   ${EMPTY}    TspCampoMascara9
   Send                    ${Codigo Tribunal}
   Aperta o Tab
@@ -125,6 +126,7 @@ Preencher dados novo processo
   Screen Should Contain     ConfirmaCNJ.png
   Press Special Key       ENTER
   Send                    !c
+  #Log To Console   ----> Salvar Processo
   sleep                   8
 
 
@@ -190,8 +192,8 @@ Confirmar que foi salvo acao
   Check If Exists In Database    select * from espjProcesso where nucnjformatado = '${Numero judicial do processo}'
 
 ####LOG
-Log To Console   ----> Inserir Precatorio    ${EMPTY}     no_newline=True
-Log To Console   ----> Dados Principais    ${EMPTY}     no_newline=True
+#Log To Console   ----> Inserir Precatorio
+#Log To Console   ----> Dados Principais
 
 Inserir Precatorio
   [Arguments]  ${Tipo Acao Precatorio}  ${Natureza}  ${Ano}  ${Situacao}   ${Valor Requisitado}  ${Data Oficio}  ${Data Recebimento}  ${Data base}  ${Principal Bruto}  ${Juros Compensatorio}  ${Juros Moratorio}  ${Honorario}  ${PE Honorario}
@@ -239,7 +241,7 @@ Inserir Precatorio
 
   ##### CONTA REQUISITADA DO PRECATORIO #####
 ####LOG
-  Log To Console   ----> Conta Requisitada    ${EMPTY}     no_newline=True
+  #Log To Console   ----> Conta Requisitada
 
   Send                    !u
   Wait For Active Window  ${EMPTY}   ${Cadastro de Processos Judiciais}  10
@@ -272,7 +274,7 @@ Inserir Precatorio
   Screen Should Contain    ConfirmaContaRequisitada.png
 
   ####LOG
-  Log To Console   ----> Partes Precatorio    ${EMPTY}     no_newline=True
+  #Log To Console   ----> Partes Precatorio
 
 ##### PARTES #####
   Click                   Partes.png
@@ -288,7 +290,7 @@ Inserir Precatorio
   Wait For Active Window  ${EMPTY}   ${Cadastro de Processos Judiciais}  10
 
   ####LOG
-  Log To Console   ----> Conta Individualizada    ${EMPTY}     no_newline=True
+  #Log To Console   ----> Conta Individualizada
 
 ##### INDIVIDUALIZAR VALORES NAS CONTAS #####
 E Distribuir os valores
@@ -341,11 +343,11 @@ E Distribuir os valores
   Click    Salvar.png
 
   ####LOG
-  Log To Console   ----> Consulta Banco    ${EMPTY}     no_newline=True
+  #Log To Console   ----> Consulta Banco
 
 Confirmar que foi salvo Precatorio
 #### Verifica se existe o processo cadastrado
   Check If Exists In Database    select * from espjProcesso where nuformatado = '${Numero judicial do processo}'
 
 #### Verifica se criou Conta Requisitada na EPRCPRECATCALCULO
-  Check If Exists In Database    select * from eprcPrecatCalculo where cdprocesso in (select cdprocesso from espjProcesso where nuformatado = '${Numero judicial do processo}') and tpCalculo = 'C';
+  Check If Exists In Database    select * from eprcPrecatCalculo where cdprocesso in (select cdprocesso from espjProcesso where nuformatado = '${Numero judicial do processo}') and tpCalculo = 'C'
