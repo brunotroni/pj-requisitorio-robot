@@ -50,6 +50,7 @@ Cenario 02:Cadastrar acao ordinaria
   Dado a tela de cadastro de processos judiciais
   Quando cadastro o processo de acao ordinaria
   E Cadastrar Precatorio
+  E Cadastrar Precatorio
   E Distribui os valores
   Então Confirmar que foi salvo Precatorio
 
