@@ -6,11 +6,7 @@ Resource          ../Resource/Cadastroresource.robot
 Resource          ../../Resource/ResourceGeral.robot
 Test Setup        Carrega diretório de imagens
 Test Teardown     Fecha testador
-Teste3
-<<<<<<< HEAD
-teste 4
-=======
->>>>>>> 05794061b3331c111a513c7dbdcbf76727648b94
+
 *** Variables ***
 ## Cadastro de processo AÇÃO ORDINARIA##
 ${Codigo Tribunal}              1
