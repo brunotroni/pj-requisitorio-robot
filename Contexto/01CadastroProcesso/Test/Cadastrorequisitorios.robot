@@ -38,7 +38,8 @@ ${Juros Compensatorio}         10000
 ${Juros Moratorio}             20000
 ${Honorario}                   30000
 ${PE Honorario}                10
- 
+
+ #TESTEGIT
 *** Test Cases ***
 
 # Cenário 01:Cadastrar requisitorios VIA WS
